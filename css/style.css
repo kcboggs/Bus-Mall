@@ -1,6 +1,17 @@
 *{
-  background-color: navajowhite;
+  background-color: #ffdead;
 } 
 img{
   width: 30%;
+  padding-top: 2%;
+}
+canvas{
+  border:2px solid black;
+  padding-left: 20%;
+  width: 300px;
+  height: 300px;
+  background-color:whitesmoke;
+}
+button{
+  margin-left: 50px; 
 }

@@ -31,9 +31,8 @@ new UniqueImages('dog-duck', '.jpg');
 new UniqueImages('pen', '.jpg');
 new UniqueImages('sweep', '.png');
 
-function getRandomImage(){
-  var uniqueIndexArray = [];
-  var index = getRandomNumber(UniqueImages.length);
+function getRandomIndex(){
+  var index = getRandomNumber(allUniqueImages.length);
   while(uniqueIndexArray.includes(index)){
     index = getRandomNumber(allUniqueImages.length);
   }
@@ -50,7 +49,7 @@ function getRandomNumber(max){
 }
 
 function displayImage(){
-  var index = getRandomImage();
+  var index = getRandomIndex();
   allUniqueImages[index].render();
 }
 
@@ -89,7 +88,7 @@ function makeNamesArray(){
 
 function generateChart(){
   var ctx = document.getElementById('myChart').getContext('2d');
-  var MyChart = new MyChart(ctx, {
+  var Chart = new Chart(ctx, {
     type:'bar',
     data: {
       labels: names,
@@ -97,14 +96,13 @@ function generateChart(){
         label: '# of Votes',
         data: votes,
         backgroundColor: [
+          'rgba(153, 102, 255, 0.2)',
           'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
         ],
-        borderWidth: 1
       }]
     },
     options: {
