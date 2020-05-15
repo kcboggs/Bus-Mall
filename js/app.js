@@ -4,7 +4,6 @@ var names = [];
 var votes = [];
 var totalVotes = 0;
 var allUniqueImages =[];
-// eslint-disable-next-line no-unused-vars
 var uniqueIndexArray =[];
 var parentElement = document.getElementById('images');
 
@@ -13,7 +12,7 @@ function UniqueImages(name, extension){
   this.votes =0;
   this.views =0;
   this.title =name;
-  this.filePath = `images/${name}${extension}`;
+  this.filePath = `img/${name}${extension}`;
   allUniqueImages.push(this);
 }
 UniqueImages.prototype.render = function(){
@@ -30,6 +29,20 @@ new UniqueImages('cthulhu', '.jpg');
 new UniqueImages('dog-duck', '.jpg');
 new UniqueImages('pen', '.jpg');
 new UniqueImages('sweep', '.png');
+new UniqueImages('pet-sweep', '.jpg');
+new UniqueImages('usb', '.gif');
+new UniqueImages('bubblegum', '.jpg');
+new UniqueImages('water-can', '.jpg');
+new UniqueImages('wine-glass', '.jpg');
+new UniqueImages('bag', '.jpg');
+new UniqueImages('banana', '.jpg');
+new UniqueImages('boots', '.jpg');
+new UniqueImages('chair', '.jpg');
+new UniqueImages('scissors', '.jpg');
+new UniqueImages('shark', '.jpg');
+new UniqueImages('tauntaun', '.jpg');
+new UniqueImages('dragon', '.jpg');
+new UniqueImages('unicorn', '.jpg');
 
 function getRandomIndex(){
   var index = getRandomNumber(allUniqueImages.length);
@@ -91,10 +104,10 @@ function generateChart(){
   var Chart = new Chart(ctx, {
     type:'bar',
     data: {
-      labels: names,
-      dataset: [{
+      labels: ['Bag', 'Banana', 'Bathroom', 'Boots', 'Breakfast', 'Bubblegum', 'Chair', 'Cthulhu', 'Dog Duck', 'Dragon', 'Pen', 'Pet Sweep', 'Scissors', 'Shark', 'Sweep', 'Tauntaun', 'USB', 'Unicorn', 'Water Can', 'Wine Glass'],
+      datasets: [{
         label: '# of Votes',
-        data: votes,
+        data: [votes],
         backgroundColor: [
           'rgba(153, 102, 255, 0.2)',
           'rgba(255, 99, 132, 0.2)',

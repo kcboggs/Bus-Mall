@@ -1,17 +1,23 @@
 *{
-  background-color: #ffdead;
+  background-color:gray;
 } 
 img{
-  width: 30%;
+  width: 20%;
   padding-top: 2%;
+}
+header{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic ;
+  font-size: 30px;
 }
 canvas{
   border:2px solid black;
   padding-left: 20%;
-  width: 300px;
+  width: 520px;
   height: 300px;
-  background-color:whitesmoke;
+  background-color:white;
 }
 button{
-  margin-left: 50px; 
+  margin-left: 50px;
+  
 }
