@@ -7,6 +7,34 @@ var allUniqueImages =[];
 var uniqueIndexArray =[];
 var parentElement = document.getElementById('images');
 
+if(localStorage.getItem('items')=== null){
+  new UniqueImages('bathroom', '.jpg');
+  new UniqueImages('breakfast', '.jpg');
+  new UniqueImages('cthulhu', '.jpg');
+  new UniqueImages('dog-duck', '.jpg');
+  new UniqueImages('pen', '.jpg');
+  new UniqueImages('sweep', '.png');
+  new UniqueImages('pet-sweep', '.jpg');
+  new UniqueImages('usb', '.gif');
+  new UniqueImages('bubblegum', '.jpg');
+  new UniqueImages('water-can', '.jpg');
+  new UniqueImages('wine-glass', '.jpg');
+  new UniqueImages('bag', '.jpg');
+  new UniqueImages('banana', '.jpg');
+  new UniqueImages('boots', '.jpg');
+  new UniqueImages('chair', '.jpg');
+  new UniqueImages('scissors', '.jpg');
+  new UniqueImages('shark', '.jpg');
+  new UniqueImages('tauntaun', '.jpg');
+  new UniqueImages('dragon', '.jpg');
+  new UniqueImages('unicorn', '.jpg');
+
+} else {
+  var localStorageItems = localStorage.getItem('items');
+  var parseLocalStorageArray = JSON.parse(localStorageItems);
+  console.log('this is my parsed array', parseLocalStorageArray);
+}
+
 function UniqueImages(name, extension){
   this.alt =name;
   this.votes =0;
@@ -22,27 +50,6 @@ UniqueImages.prototype.render = function(){
   imageElement.alt = this.alt;
   parentElement.appendChild(imageElement);
 };
-
-new UniqueImages('bathroom', '.jpg');
-new UniqueImages('breakfast', '.jpg');
-new UniqueImages('cthulhu', '.jpg');
-new UniqueImages('dog-duck', '.jpg');
-new UniqueImages('pen', '.jpg');
-new UniqueImages('sweep', '.png');
-new UniqueImages('pet-sweep', '.jpg');
-new UniqueImages('usb', '.gif');
-new UniqueImages('bubblegum', '.jpg');
-new UniqueImages('water-can', '.jpg');
-new UniqueImages('wine-glass', '.jpg');
-new UniqueImages('bag', '.jpg');
-new UniqueImages('banana', '.jpg');
-new UniqueImages('boots', '.jpg');
-new UniqueImages('chair', '.jpg');
-new UniqueImages('scissors', '.jpg');
-new UniqueImages('shark', '.jpg');
-new UniqueImages('tauntaun', '.jpg');
-new UniqueImages('dragon', '.jpg');
-new UniqueImages('unicorn', '.jpg');
 
 function getRandomIndex(){
   var index = getRandomNumber(allUniqueImages.length);
@@ -100,8 +107,8 @@ function makeNamesArray(){
 }
 
 function generateChart(){
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var Chart = new Chart(ctx, {
+  var myChart = document.getElementById('myChart').getContext('2d');
+  var Chart = new Chart(myChart, {
     type:'bar',
     data: {
       labels: ['Bag', 'Banana', 'Bathroom', 'Boots', 'Breakfast', 'Bubblegum', 'Chair', 'Cthulhu', 'Dog Duck', 'Dragon', 'Pen', 'Pet Sweep', 'Scissors', 'Shark', 'Sweep', 'Tauntaun', 'USB', 'Unicorn', 'Water Can', 'Wine Glass'],
